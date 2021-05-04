@@ -20,8 +20,8 @@ function App() {
           </div>
           <div className="resume">
             <h3>Job Title</h3>
-            <h4>Name Flair</h4>
-            <h4>May 2015 - December 2015</h4>
+            <h4 className="name">Name Flair</h4>
+            <h4 className="date">May 2015 - December 2015</h4>
             <div className="dutiesContainer">
               <FaAngleDoubleRight size={48} style={{ fill: "#2caeba" }} />
               <p className="duties">
@@ -31,8 +31,11 @@ function App() {
                 ullam illum maiores obcaecati.
               </p>
             </div>
-            <button>More Info</button>
           </div>
+        </div>
+
+        <div className="btnWrapper">
+          <button className="infoBtn">More Info</button>
         </div>
       </section>
     </main>

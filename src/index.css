@@ -87,7 +87,7 @@ section {
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 85%;
+  width: 95%;
   margin-top: 2rem;
   margin-bottom: 5rem;
   background: inherit;
@@ -112,7 +112,7 @@ section {
   display: flex;
   flex-direction: row;
   margin-top: 2rem;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .tabsContainer {
@@ -158,8 +158,23 @@ section {
 .resume {
   display: flex;
   flex-direction: column;
-  width: 100%;
   padding: 2rem;
+}
+
+.name {
+  padding: 0.375rem 0.75rem;
+  background: #bbd4d6;
+  color: #617d98;
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+}
+
+.date {
+  font-weight: 400;
+  color: #617d98;
 }
 
 .dutiesContainer {
@@ -172,4 +187,26 @@ section {
   padding-left: 3rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.btnWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.infoBtn {
+  width: 12rem;
+  padding: 1rem;
+  background: #2caeba;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  color: white;
+}
+
+.infoBtn:hover {
+  background: #bff8fd;
+  color: black;
 }
