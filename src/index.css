@@ -111,15 +111,15 @@ section {
 .container {
   display: flex;
   flex-direction: row;
-  margin-top: 2rem;
+  margin-top: 1rem;
   /* width: 100%; */
 }
 
 .tabsContainer {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
-  margin-right: 5rem;
+  padding: 1rem;
+  margin-right: 3rem;
   align-items: center;
 }
 
@@ -127,10 +127,11 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  margin: 0;
   text-transform: uppercase;
 }
 
