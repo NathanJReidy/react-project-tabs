@@ -180,8 +180,13 @@ section {
 
 .dutiesContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding-top: 1rem;
+}
+
+.dutiesWrapper {
+  display: flex;
+  flex-direction: row;
 }
 
 .duties {
