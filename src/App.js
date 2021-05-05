@@ -12,15 +12,18 @@ function App() {
     try {
       const response = await fetch(url);
       const resumes = await response.json();
+      console.log(`setResume runs and resumes is ${resumes}`);
       setIsLoading(false);
       setResume(resumes);
     } catch (error) {
       setIsLoading(false);
+      console.log("ERROR");
       console.log(error);
     }
   };
 
   useEffect(() => {
+    console.log("useEffect runs");
     fetchResumes();
   }, []);
 
@@ -38,22 +41,34 @@ function App() {
 
             <div className="container">
               <div className="tabsContainer">
-                <button className="tabsNameButton">
-                  <h3 className="tabsName">Tommy</h3>
-                </button>
+                {resume.map((person) => {
+                  return (
+                    <button className="tabsNameButton">
+                      <h3
+                        className="tabsName"
+                        onClick={() => {
+                          const newResume = resume.filter(
+                            (item) => item.company === person.company
+                          );
+                          setResume(newResume);
+                        }}
+                      >
+                        {person.company}
+                      </h3>
+                    </button>
+                  );
+                })}
               </div>
+
               <div className="resume">
-                <h3>Job Title</h3>
-                <h4 className="name">Name Flair</h4>
-                <h4 className="date">May 2015 - December 2015</h4>
+                <h3>{resume[0].title}</h3>
+                <h4 className="name">{resume[0].company}</h4>
+                <h4 className="date">{resume[0].dates}</h4>
                 <div className="dutiesContainer">
                   <FaAngleDoubleRight size={48} style={{ fill: "#2caeba" }} />
-                  <p className="duties">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Sed soluta itaque quaerat voluptate vitae quod natus
-                    repudiandae in dignissimos error dolorem sit debitis,
-                    officiis iste dolore ullam illum maiores obcaecati.
-                  </p>
+                  {resume[0].duties.map((duty) => {
+                    return <p className="duties">{duty}</p>;
+                  })}
                 </div>
               </div>
             </div>
