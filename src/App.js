@@ -5,15 +5,15 @@ const url = "https://course-api.com/react-tabs-project";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [resume, setResume] = useState([]);
+  const [jobs, setJobs] = useState([]);
   const [value, setValue] = useState(0);
 
-  const fetchResumes = async () => {
+  const fetchJobs = async () => {
     setIsLoading(true);
     try {
       const response = await fetch(url);
-      const resumes = await response.json();
-      setResume(resumes);
+      const jobs = await response.json();
+      setJobs(jobs);
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false);
@@ -23,7 +23,7 @@ function App() {
 
   useEffect(() => {
     console.log("useEffect runs");
-    fetchResumes();
+    fetchJobs();
   }, []);
 
   if (isLoading) {
@@ -36,7 +36,7 @@ function App() {
     );
   }
 
-  const { id, order, title, dates, duties, company } = resume[value];
+  const { id, order, title, dates, duties, company } = jobs[value];
 
   return (
     <main>
@@ -48,7 +48,7 @@ function App() {
 
         <div className="container">
           <div className="tabsContainer">
-            {resume.map((person, index) => {
+            {jobs.map((job, index) => {
               return (
                 <button className="tabsNameButton">
                   <h3
@@ -57,14 +57,14 @@ function App() {
                       setValue(index);
                     }}
                   >
-                    {person.company}
+                    {job.company}
                   </h3>
                 </button>
               );
             })}
           </div>
 
-          <div className="resume">
+          <div className="jobs">
             <h3>{title}</h3>
             <h4 className="name">{company}</h4>
             <h4 className="date">{dates}</h4>

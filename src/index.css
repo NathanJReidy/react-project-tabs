@@ -226,7 +226,7 @@ section {
   }
 }
 
-.resume {
+.jobs {
   display: flex;
   flex-direction: column;
   padding-left: 1rem;
@@ -236,7 +236,7 @@ section {
 }
 
 @media screen and (min-width: 992px) {
-  .resume {
+  .jobs {
     display: flex;
     flex-direction: column;
     padding: 2rem;
