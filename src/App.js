@@ -13,12 +13,10 @@ function App() {
     try {
       const response = await fetch(url);
       const resumes = await response.json();
-      console.log(`setResume runs and resumes is ${resumes}`);
       setResume(resumes);
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false);
-      console.log("ERROR");
       console.log(error);
     }
   };
@@ -26,13 +24,7 @@ function App() {
   useEffect(() => {
     console.log("useEffect runs");
     fetchResumes();
-    // return () => {
-    //   setResume([]);
-    // };
   }, []);
-
-  // const { id, order, title, dates, duties, company } = resume[0];
-  console.log("TEST");
 
   if (isLoading) {
     return (
