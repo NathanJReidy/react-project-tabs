@@ -110,17 +110,36 @@ section {
 
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: 1rem;
   /* width: 100%; */
 }
 
+@media screen and (min-width: 992px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    /* width: 100%; */
+  }
+}
+
 .tabsContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 1rem;
   margin-right: 3rem;
-  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 992px) {
+  .tabsContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin-right: 3rem;
+    align-items: center;
+  }
 }
 
 .tabsName {
@@ -144,16 +163,39 @@ section {
 .tabsNameButton:focus {
   color: #2caeba;
   cursor: pointer;
-  border-left: 2px solid #2caeba;
+  border-bottom: 2px solid #2caeba;
   border-top: 1px solid #ffffff;
-  border-bottom: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
   border-right: 1px solid #ffffff;
 }
 
 .tabsNameButton:hover {
   color: #2caeba;
   cursor: pointer;
-  border-left: 2px solid #2caeba;
+  border-bottom: 2px solid #2caeba;
+}
+
+@media screen and (min-width: 992px) {
+  .tabsNameButton {
+    background: inherit;
+    border: none;
+    outline: none;
+  }
+
+  .tabsNameButton:focus {
+    color: #2caeba;
+    cursor: pointer;
+    border-left: 2px solid #2caeba;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+  }
+
+  .tabsNameButton:hover {
+    color: #2caeba;
+    cursor: pointer;
+    border-left: 2px solid #2caeba;
+  }
 }
 
 .resume {

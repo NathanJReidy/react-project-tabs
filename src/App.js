@@ -25,9 +25,9 @@ function App() {
   useEffect(() => {
     console.log("useEffect runs");
     fetchResumes();
-    return () => {
-      setResume([]); // This worked for me
-    };
+    // return () => {
+    //   setResume([]);
+    // };
   }, []);
 
   // const { id, order, title, dates, duties, company } = resume[0];
@@ -55,16 +55,13 @@ function App() {
 
         <div className="container">
           <div className="tabsContainer">
-            {resume.map((person) => {
+            {resume.map((person, index) => {
               return (
                 <button className="tabsNameButton">
                   <h3
                     className="tabsName"
                     onClick={() => {
-                      const newResume = resume.filter(
-                        (item) => item.company === person.company
-                      );
-                      setResume(newResume);
+                      setValue(index);
                     }}
                   >
                     {person.company}
@@ -79,9 +76,9 @@ function App() {
             <h4 className="name">{company}</h4>
             <h4 className="date">{dates}</h4>
             <div className="dutiesContainer">
-              {duties.map((duty) => {
+              {duties.map((duty, index) => {
                 return (
-                  <div className="dutiesWrapper">
+                  <div className="dutiesWrapper" key={index}>
                     <FaAngleDoubleRight size={48} style={{ fill: "#2caeba" }} />
                     <p className="duties">{duty}</p>
                   </div>
