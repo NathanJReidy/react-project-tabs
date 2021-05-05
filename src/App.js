@@ -9,6 +9,7 @@ function App() {
   const [value, setValue] = useState(0);
 
   const fetchResumes = async () => {
+    setIsLoading(true);
     try {
       const response = await fetch(url);
       const resumes = await response.json();
